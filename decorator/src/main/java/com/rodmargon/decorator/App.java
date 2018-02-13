@@ -1,13 +1,14 @@
 package com.rodmargon.decorator;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Pizza pizza = new ChickenFiesta();
+        pizza = new Paneer(pizza);
+        pizza = new FreshTomato(pizza);
+        System.out.println(pizza.getDescription());
+        System.out.println(pizza.getCost());
+        		
     }
 }
