@@ -1,5 +1,7 @@
 package com.rodmargon.chain;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -19,8 +21,18 @@ public class ATMDispenseChain
 	
 	public static void main( String[] args )
     {
-        Currency amount = new Currency(70);
-        ATMDispenseChain atm = new ATMDispenseChain();
-        atm.dispenser.dispense(amount);
+        while(true) {
+        	int  amount = 0;
+        	System.out.println("Enter amount to dispense");
+        	Scanner input = new Scanner(System.in);
+        	amount = input.nextInt();
+        	if (amount % 10 != 0) {
+				System.out.println("Amount should be in multiple of 10s.");
+				return;
+			}
+        	Currency currency = new Currency(amount);
+	        ATMDispenseChain atm = new ATMDispenseChain();
+	        atm.dispenser.dispense(currency);
+        }    
      }
 }

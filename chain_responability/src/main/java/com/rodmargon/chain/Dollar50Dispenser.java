@@ -9,8 +9,13 @@ public class Dollar50Dispenser implements DispenseChain {
 	}
 
 	public void dispense(Currency amount) {
-		if(amount.getAmount()%50==0) {
-			System.out.println( "Billetes de 50 " + amount.getAmount()/50);
+		int notes50 = amount.getAmount()/50;
+		if (notes50 > 0) {
+			System.out.println( "Notes of 50 " + notes50);
+			int remainder = amount.getAmount()%50;
+			if(remainder > 0) {
+				chain.dispense(new Currency(remainder));
+			}
 		} else {
 			chain.dispense(amount);
 		}

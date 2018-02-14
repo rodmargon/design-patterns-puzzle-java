@@ -9,8 +9,13 @@ public class Dollar20Dispenser implements DispenseChain {
 	}
 
 	public void dispense(Currency amount) {
-		if(amount.getAmount()%20==0) {
-			System.out.println( "Billetes de 20 " + amount.getAmount()/20);
+		int notes20 = amount.getAmount()/20;
+		if (notes20 > 0) {
+			System.out.println( "Notes of 20 " + amount.getAmount()/20);
+			int remainder = amount.getAmount()%20;
+			if(remainder > 0) {
+				chain.dispense(new Currency(remainder));
+			}
 		} else {
 			chain.dispense(amount);
 		}
