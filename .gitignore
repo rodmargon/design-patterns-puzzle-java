@@ -80,3 +80,6 @@ decorator/.classpath
 decorator/.settings/org.eclipse.m2e.core.prefs
 .metadata/
 .recommenders/
+*.classpath
+*.project
+*.prefs
