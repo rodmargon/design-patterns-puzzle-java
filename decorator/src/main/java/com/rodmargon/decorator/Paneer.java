@@ -2,7 +2,7 @@ package com.rodmargon.decorator;
 
 public class Paneer extends ToppingsDecorator {
 
-private Pizza pizza;
+	private Pizza pizza;
 	
 	public Pizza getPizza() {
 		return pizza;
