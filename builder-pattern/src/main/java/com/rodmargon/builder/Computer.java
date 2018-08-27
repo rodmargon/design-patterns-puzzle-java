@@ -1,4 +1,4 @@
-package java.com.rodmargon.builder;
+package main.java.com.rodmargon.builder;
 
 public class Computer {
 	
