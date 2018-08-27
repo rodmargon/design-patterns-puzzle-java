@@ -12,4 +12,11 @@ Some of the parameters might be optional but in Factory pattern, we are forced t
 If the object is heavy and its creation is complex, then all that complexity will be part of Factory classes that is confusing.
 We can solve the issues with large number of parameters by providing a constructor with required parameters and then different setter methods to set the optional parameters. The problem with this approach is that the Object state will be inconsistent until unless all the attributes are set explicitly.
 
-Builder pattern solves the issue with large number of optional parameters and inconsistent state by providing a way to build the object step-by-step and provide a method that will actually return the final Object
+Builder pattern solves the issue with large number of optional parameters and inconsistent state by providing a way to build the object step-by-step and provide a method that will actually return the final Object.
+
+Steps for implementation:
+
+1. First of all you need to create a static nested class and then copy all the arguments from the outer class to the Builder class. We should follow the naming convention and if the class name is Computer then builder class should be named as ComputerBuilder.
+2. Java Builder class should have a public constructor with all the required attributes as parameters.
+3. Java Builder class should have methods to set the optional parameters and it should return the same Builder object after setting the optional attribute.
+4.The final step is to provide a build() method in the builder class that will return the Object needed by client program. For this we need to have a private constructor in the Class with Builder class as argument.
